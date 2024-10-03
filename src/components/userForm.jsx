@@ -45,7 +45,27 @@ export default function UserForm({ data, handleSubmit }) {
           </Select>
         </FormControl>
 
-     
+        <FormControl mt={4}>
+          <FormLabel>Birthday</FormLabel>
+          <Input
+            value={inputValue?.birthday || ""}
+            onChange={(e) =>
+              setInputValue({ ...inputValue, birthday: e.target.value })
+            }
+            type="date"
+          ></Input>
+        </FormControl>
+
+        <FormControl mt={4}>
+          <FormLabel>Location</FormLabel>
+          <Input
+            value={inputValue?.address || ""}
+            onChange={(e) =>
+              setInputValue({ ...inputValue, address: e.target.value })
+            }
+            placeholder="Loacation"
+          />
+        </FormControl>
         <Button
           mb={5}
           onClick={() => handleSubmit(inputValue)}
